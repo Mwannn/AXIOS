@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tech Connects - Bridging Digital Solutions</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="text-2xl font-bold text-blue-900 flex items-center">
+          <span>🌍 Tech Connects</span>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
+          <li>
+            <a href="#home" class="text-blue-600 hover:text-blue-800">Home</a>
+          </li>
+          <li>
+            <a href="#courses" class="text-blue-600 hover:text-blue-800"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a href="#sustainability" class="text-blue-600 hover:text-blue-800"
+              >Sustainability</a
+            >
+          </li>
+          <li>
+            <a href="#testimonials" class="text-blue-600 hover:text-blue-800"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="text-blue-600 hover:text-blue-800"
+              >Contact</a
+            >
+          </li>
+          <div class="flex items-center space-x-4">
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="Search courses..."
+              class="border rounded-lg p-2 w-full md:w-auto"
+            />
+            <button
+              onclick="searchCourses()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Search
+            </button>
+            <i
+              id="dark-mode-toggle"
+              class="fas fa-sun dark-mode-toggle text-yellow-500"
+              onclick="toggleDarkMode()"
+            ></i>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section text-white py-20">
+      <div class="container mx-auto text-center px-4">
+        <h1 class="text-4xl sm:text-5xl font-bold mb-4 fade-in">
+          Bridging Digital Solutions for a Sustainable Tomorrow
+        </h1>
+        <p class="text-lg sm:text-xl mb-8">
+          Free coding and AI resources to empower a sustainable future.
+        </p>
+        <a
+          href="#courses"
+          class="bg-white text-blue-900 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition text-sm sm:text-base"
+          >Explore Free Courses</a
+        >
+      </div>
+    </section>
+
+    <!-- Courses Section -->
+    <section id="courses" class="py-16 bg-white">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-blue-900 mb-12"
+        >
+          Free Learning Resources
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <!-- Course 1 -->
+          <div class="course-card bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+              Fundamental Python Programming
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">
+              Learn Python basics for AI, data science, and sustainable tech
+              solutions.
+            </p>
+            <button
+              onclick="openModal('python-modal')"
+              class="mt-2 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition block text-sm sm:text-base"
+            >
+              Preview Material
+            </button>
+            <a
+              href="python-course.html"
+              class="mt-2 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition block text-sm sm:text-base"
+              >Start Learning</a
+            >
+          </div>
+          <!-- Course 2 -->
+          <div class="course-card bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+              AI & Machine Learning Basics
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">
+              Explore AI concepts to solve real-world sustainability challenges.
+            </p>
+            <button
+              onclick="openModal('ai-modal')"
+              class="mt-2 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition block text-sm sm:text-base"
+            >
+              Preview Material
+            </button>
+            <a
+              href="ai-course.html"
+              class="mt-2 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition block text-sm sm:text-base"
+              >Start Learning</a
+            >
+          </div>
+          <!-- Course 3 -->
+          <div class="course-card bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+              Web Development with JavaScript
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">
+              Build interactive web applications with a focus on efficiency.
+            </p>
+            <button
+              onclick="openModal('js-modal')"
+              class="mt-2 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition block text-sm sm:text-base"
+            >
+              Preview Material
+            </button>
+            <a
+              href="js-course.html"
+              class="mt-2 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition block text-sm sm:text-base"
+              >Start Learning</a
+            >
+          </div>
+          <!-- Course 4: Data Analysis with Pandas -->
+          <div class="course-card bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+              Data Analysis with Pandas
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">
+              Analyze data to support sustainable decision-making, like energy
+              consumption trends.
+            </p>
+            <button
+              onclick="openModal('pandas-modal')"
+              class="mt-2 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition block text-sm sm:text-base"
+            >
+              Preview Material
+            </button>
+            <a
+              href="pandas-course.html"
+              class="mt-2 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition block text-sm sm:text-base"
+              >Start Learning</a
+            >
+          </div>
+          <!-- Course 5: Introduction to IoT for Sustainability -->
+          <div class="course-card bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+              Introduction to IoT for Sustainability
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">
+              Learn IoT basics to create smart, sustainable solutions like
+              efficient farming.
+            </p>
+            <button
+              onclick="openModal('iot-modal')"
+              class="mt-2 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition block text-sm sm:text-base"
+            >
+              Preview Material
+            </button>
+            <a
+              href="iot-course.html"
+              class="mt-2 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition block text-sm sm:text-base"
+              >Start Learning</a
+            >
+          </div>
+          <!-- Course 6: Ethical AI Development -->
+          <div class="course-card bg-gray-50 rounded-lg p-4 sm:p-6 text-center">
+            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 mb-2">
+              Ethical AI Development
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base mb-4">
+              Develop AI responsibly to ensure positive impacts on society and
+              the environment.
+            </p>
+            <button
+              onclick="openModal('ethical-ai-modal')"
+              class="mt-2 bg-green-600 text-white px-3 py-2 rounded hover:bg-green-700 transition block text-sm sm:text-base"
+            >
+              Preview Material
+            </button>
+            <a
+              href="ethical-ai-course.html"
+              class="mt-2 bg-blue-600 text-white px-3 py-2 rounded hover:bg-blue-700 transition block text-sm sm:text-base"
+              >Start Learning</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Modals for Preview -->
+    <div
+      id="python-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="modal-content bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">Python Preview</h3>
+        <p class="text-gray-600 mb-4">A quick look at variables in Python:</p>
+        <pre class="bg-gray-100 p-4 text-sm overflow-auto"><code>x = 5
+print("Value of x is:", x)</code></pre>
+        <button
+          onclick="closeModal('python-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="ai-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="modal-content bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">AI Preview</h3>
+        <p class="text-gray-600 mb-4">Introduction to AI concepts:</p>
+        <p class="text-gray-600">
+          AI can optimize energy usage by predicting consumption patterns.
+        </p>
+        <button
+          onclick="closeModal('ai-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="js-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="modal-content bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">
+          JavaScript Preview
+        </h3>
+        <p class="text-gray-600 mb-4">A simple JavaScript example:</p>
+        <pre
+          class="bg-gray-100 p-4 text-sm overflow-auto"
+        ><code>let message = "Hello, World!";
+console.log(message);</code></pre>
+        <button
+          onclick="closeModal('js-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="pandas-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="modal-content bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">Pandas Preview</h3>
+        <p class="text-gray-600 mb-4">
+          A quick look at loading data with Pandas:
+        </p>
+        <pre
+          class="bg-gray-100 p-4 text-sm overflow-auto"
+        ><code>import pandas as pd
+data = pd.DataFrame({'Energy (kWh)': [100, 120, 90]})
+print(data)</code></pre>
+        <button
+          onclick="closeModal('pandas-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="iot-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="modal-content bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">IoT Preview</h3>
+        <p class="text-gray-600 mb-4">Introduction to IoT concepts:</p>
+        <p class="text-gray-600">
+          IoT devices can monitor soil moisture for efficient farming.
+        </p>
+        <button
+          onclick="closeModal('iot-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+    <div
+      id="ethical-ai-modal"
+      class="modal fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden"
+    >
+      <div class="modal-content bg-white rounded-lg p-6 max-w-sm w-full mx-4">
+        <h3 class="text-xl font-semibold text-blue-800 mb-2">
+          Ethical AI Preview
+        </h3>
+        <p class="text-gray-600 mb-4">Key principles of ethical AI:</p>
+        <p class="text-gray-600">
+          Ensure AI systems are fair, transparent, and environmentally
+          responsible.
+        </p>
+        <button
+          onclick="closeModal('ethical-ai-modal')"
+          class="mt-4 bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700 w-full"
+        >
+          Close
+        </button>
+      </div>
+    </div>
+
+    <!-- Sustainability Section -->
+    <section id="sustainability" class="py-16 bg-green-50">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-green-900 mb-12"
+        >
+          Coding for Sustainability
+        </h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h3 class="text-lg sm:text-xl font-semibold text-green-800 mb-2">
+              AI for Energy Efficiency
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base">
+              Learn how AI can optimize energy usage in smart cities, reducing
+              waste and promoting sustainability.
+            </p>
+          </div>
+          <div class="bg-white p-4 sm:p-6 rounded-lg shadow-md">
+            <h3 class="text-lg sm:text-xl font-semibold text-green-800 mb-2">
+              Sustainable Web Practices
+            </h3>
+            <p class="text-gray-600 text-sm sm:text-base">
+              Discover how to build lightweight, efficient web applications to
+              minimize carbon footprints.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-16 bg-gray-100">
+      <div class="container mx-auto px-4">
+        <h2
+          class="text-2xl sm:text-3xl font-bold text-center text-blue-900 mb-12"
+        >
+          What Our Learners Say
+        </h2>
+        <div
+          class="max-w-md sm:max-w-xl mx-auto bg-white p-4 sm:p-6 rounded-lg shadow-md"
+        >
+          <p class="text-gray-600 italic text-sm sm:text-base mb-4">
+            "The sustainability focus inspired me to use coding for good.
+            Amazing resources!"
+          </p>
+          <p class="text-blue-800 font-semibold text-sm sm:text-base">
+            Rudi Santoso
+          </p>
+          <p class="text-gray-500 text-sm sm:text-base">
+            Aspiring Data Scientist
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="contact" class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-4 text-center">
+        <h3 class="text-xl sm:text-2xl font-bold mb-4">Ready to Learn?</h3>
+        <p class="text-sm sm:text-base mb-4">
+          Contact us: Jl. Balai Pustaka Baru I No.2, RT.2/RW.7, Rawamangun, Kec.
+          Pulo Gadung, Kota Jakarta Timur, Daerah Khusus Ibukota Jakarta 13220
+        </p>
+        <p class="text-sm sm:text-base mb-4">
+          © 2025 Tech Connects By AXIOS. All rights reserved.
+        </p>
+        <div
+          class="flex flex-col sm:flex-row justify-center space-y-2 sm:space-y-0 sm:space-x-4"
+        >
+          <a href="#" class="hover:underline text-sm sm:text-base"
+            >Terms and Conditions</a
+          >
+          <a href="#" class="hover:underline text-sm sm:text-base"
+            >Privacy Policy</a
+          >
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      function openModal(modalId) {
+        document.getElementById(modalId).classList.remove("hidden");
+      }
+      function closeModal(modalId) {
+        document.getElementById(modalId).classList.add("hidden");
+      }
+      document.addEventListener("keydown", (e) => {
+        if (e.key === "Escape") {
+          document
+            .querySelectorAll(".modal")
+            .forEach((modal) => modal.classList.add("hidden"));
+        }
+      });
+      document.querySelectorAll("a[href]").forEach((link) => {
+        link.addEventListener("click", (e) => {
+          if (link.href.includes("course")) {
+            if (!confirm("Are you ready to start learning?"))
+              e.preventDefault();
+          }
+        });
+      });
+      function toggleDarkMode() {
+        const toggle = document.getElementById("dark-mode-toggle");
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggle.classList.remove("fa-sun");
+          toggle.classList.add("fa-moon");
+          toggle.style.color = "#f1c40f";
+        } else {
+          toggle.classList.remove("fa-moon");
+          toggle.classList.add("fa-sun");
+          toggle.style.color = "#f59e0b";
+        }
+        localStorage.setItem(
+          "darkMode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+        const toggle = document.getElementById("dark-mode-toggle");
+        toggle.classList.remove("fa-sun");
+        toggle.classList.add("fa-moon");
+        toggle.style.color = "#f1c40f";
+      }
+      function searchCourses() {
+        const query = document.getElementById("search-bar").value.toLowerCase();
+        const courses = document.querySelectorAll(".course-card");
+        courses.forEach((course) => {
+          const title = course.querySelector("h3").textContent.toLowerCase();
+          const description = course
+            .querySelector("p")
+            .textContent.toLowerCase();
+          if (title.includes(query) || description.includes(query)) {
+            course.style.display = "block";
+          } else {
+            course.style.display = "none";
+          }
+        });
+      }
+      document.getElementById("menu-toggle").addEventListener("click", () => {
+        document.getElementById("nav-menu").classList.toggle("hidden");
+      });
+    </script>
+    <style>
+      .dark-mode {
+        background-color: #1f2937;
+        color: #e5e7eb;
+      }
+      .dark-mode .bg-white {
+        background-color: #374151;
+      }
+      .dark-mode .bg-gray-100 {
+        background-color: #1f2937;
+      }
+      .dark-mode .text-gray-600 {
+        color: #d1d5db;
+      }
+      .dark-mode .text-blue-900 {
+        color: #93c5fd;
+      }
+      .dark-mode .bg-blue-900 {
+        background-color: #111827;
+      }
+      .dark-mode .course-card {
+        background-color: #4b5563;
+      }
+      .dark-mode-toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .dark-mode-toggle:hover {
+        transform: scale(1.2);
+      }
+      .modal-content pre {
+        max-height: 200px;
+      }
+      @media (max-width: 640px) {
+        #nav-menu {
+          display: none;
+          position: absolute;
+          top: 100%;
+          right: 0;
+          background-color: white;
+          width: 200px;
+          padding: 10px;
+          flex-direction: column;
+          space-y-2;
+        }
+        #nav-menu.active {
+          display: flex;
+        }
+        .hero-section h1 {
+          font-size: 2rem;
+        }
+        .hero-section p {
+          font-size: 1rem;
+        }
+        .course-card {
+          padding: 1rem;
+        }
+      }
+    </style>
+  </body>
+</html>

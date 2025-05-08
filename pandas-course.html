@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Data Analysis with Pandas</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .dark-mode {
+        background-color: #1f2937;
+        color: #e5e7eb;
+      }
+      .dark-mode .bg-white {
+        background-color: #374151;
+      }
+      .dark-mode .bg-gray-100 {
+        background-color: #1f2937;
+      }
+      .dark-mode .text-gray-600 {
+        color: #d1d5db;
+      }
+      .dark-mode .text-blue-900 {
+        color: #93c5fd;
+      }
+      .dark-mode .bg-blue-900 {
+        background-color: #111827;
+      }
+      .dark-mode-toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .dark-mode-toggle:hover {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md py-4">
+      <div class="container mx-auto px-6 flex justify-between items-center">
+        <a href="index.html" class="text-blue-900 font-bold text-2xl"
+          >🌍 Tech Connects</a
+        >
+        <i
+          id="dark-mode-toggle"
+          class="fas fa-sun dark-mode-toggle text-yellow-500"
+          onclick="toggleDarkMode()"
+        ></i>
+      </div>
+    </header>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-blue-900 mb-6">
+          Data Analysis with Pandas
+        </h1>
+        <p class="text-gray-700 mb-4">
+          Learn to analyze data with Pandas to support sustainable
+          decision-making.
+        </p>
+
+        <!-- Progress Tracker -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-blue-800 mb-2">
+            Your Progress
+          </h2>
+          <div class="w-full bg-gray-200 rounded-full h-4">
+            <div
+              id="progress-bar"
+              class="bg-blue-600 h-4 rounded-full"
+              style="width: 0%"
+            ></div>
+          </div>
+          <p id="progress-text" class="text-gray-600 mt-2">0% Complete</p>
+        </div>
+
+        <!-- Course Material -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 1: Introduction to Pandas
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Learn the basics of Pandas for data manipulation.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Example: Creating a DataFrame
+import pandas as pd
+data = pd.DataFrame({'City': ['Jakarta', 'Bandung'], 'Energy (kWh)': [500, 300]})
+print(data)
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 2: Data Cleaning
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Clean and preprocess data for analysis.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Example: Handling Missing Data
+import pandas as pd
+data = pd.DataFrame({'Energy (kWh)': [500, None, 300]})
+data['Energy (kWh)'].fillna(data['Energy (kWh)'].mean(), inplace=True)
+print(data)
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 3: Data Visualization
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Visualize data trends for better insights.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Example: Plotting Data
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.DataFrame({'Month': ['Jan', 'Feb', 'Mar'], 'Energy (kWh)': [500, 450, 300]})
+data.plot(x='Month', y='Energy (kWh)', kind='bar')
+plt.title('Energy Consumption')
+plt.savefig('energy_plot.png')
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Sustainability Project: Energy Consumption Analysis
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Analyze energy data to identify opportunities for reduction.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Energy Consumption Analysis
+import pandas as pd
+data = pd.DataFrame({
+    'Day': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    'Energy (kWh)': [500, 600, 550, 300, 400]
+})
+average = data['Energy (kWh)'].mean()
+high_usage_days = data[data['Energy (kWh)'] > average]['Day'].tolist()
+print(f"Average energy usage: {average} kWh")
+print(f"Days with high usage: {high_usage_days}")
+                </pre
+          >
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Quiz: Test Your Knowledge
+          </h2>
+          <p class="text-gray-600 mb-4">What does `fillna()` do in Pandas?</p>
+          <div class="mt-4">
+            <label class="block mb-2"
+              ><input type="radio" name="quiz" value="correct" /> Replaces
+              missing values</label
+            >
+            <label class="block mb-2"
+              ><input type="radio" name="quiz" value="incorrect1" /> Deletes
+              missing values</label
+            >
+            <label class="block mb-2"
+              ><input type="radio" name="quiz" value="incorrect2" /> Adds new
+              rows</label
+            >
+            <button
+              onclick="checkQuiz()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Submit
+            </button>
+            <p id="quiz-result" class="mt-2 text-gray-600"></p>
+          </div>
+        </div>
+
+        <!-- Downloadable Resource -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Downloadable Resource
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Download the course material as a text file for offline learning.
+          </p>
+          <a
+            href="#"
+            onclick="downloadMaterial('Pandas Course Material', 'Pandas basics: DataFrame, Data Cleaning, Visualization, and Energy Consumption Analysis...')"
+            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+            >Download Material</a
+          >
+        </div>
+
+        <div class="text-center">
+          <a
+            href="index.html"
+            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+            >Back to Courses</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>© 2025 Tech Connects. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleDarkMode() {
+        const toggle = document.getElementById("dark-mode-toggle");
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggle.classList.remove("fa-sun");
+          toggle.classList.add("fa-moon");
+          toggle.style.color = "#f1c40f";
+        } else {
+          toggle.classList.remove("fa-moon");
+          toggle.classList.add("fa-sun");
+          toggle.style.color = "#f59e0b";
+        }
+        localStorage.setItem(
+          "darkMode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+        const toggle = document.getElementById("dark-mode-toggle");
+        toggle.classList.remove("fa-sun");
+        toggle.classList.add("fa-moon");
+        toggle.style.color = "#f1c40f";
+      }
+      window.addEventListener("scroll", () => {
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        document.getElementById("progress-bar").style.width = progress + "%";
+        document.getElementById("progress-text").textContent =
+          Math.round(progress) + "% Complete";
+        localStorage.setItem("pandasProgress", progress);
+      });
+      if (localStorage.getItem("pandasProgress")) {
+        const savedProgress = localStorage.getItem("pandasProgress");
+        document.getElementById("progress-bar").style.width =
+          savedProgress + "%";
+        document.getElementById("progress-text").textContent =
+          Math.round(savedProgress) + "% Complete";
+      }
+      function checkQuiz() {
+        const answer = document.querySelector('input[name="quiz"]:checked');
+        const result = document.getElementById("quiz-result");
+        if (answer && answer.value === "correct") {
+          result.textContent = "Correct! `fillna()` replaces missing values.";
+          result.style.color = "green";
+        } else {
+          result.textContent = "Incorrect. `fillna()` replaces missing values.";
+          result.style.color = "red";
+        }
+      }
+      function downloadMaterial(filename, content) {
+        const blob = new Blob([content], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename + ".txt";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>
