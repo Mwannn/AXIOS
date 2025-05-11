@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fundamental Python Programming</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md py-4">
+      <div class="container mx-auto px-6 text-center">
+        <a href="index.html" class="text-blue-900 font-bold text-2xl"
+          >🌍 Tech Connects</a
+        >
+      </div>
+    </header>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-blue-900 mb-6">
+          Fundamental Python Programming
+        </h1>
+        <p class="text-gray-700 mb-4">
+          Welcome to your free Python learning journey! Master the basics and
+          apply them to sustainable tech solutions.
+        </p>
+
+        <!-- Course Material -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 1: Variables and Data Types
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Understand how to store data using variables and different data
+            types.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Example: Variables and Data Types
+name = "Learner"
+age = 25
+height = 1.75
+is_student = True
+print(f"Name: {name}, Age: {age}, Height: {height}m, Student: {is_student}")
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 2: Control Structures
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Learn to control program flow with loops and conditionals.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Example: For Loop and If Statement
+for i in range(5):
+    if i % 2 == 0:
+        print(f"{i} is even")
+    else:
+        print(f"{i} is odd")
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 3: Functions
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Create reusable code blocks for efficiency.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Example: Function Definition
+def greet(name):
+    return f"Hello, {name}!"
+print(greet("Learner"))
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Sustainability Project: Carbon Footprint Calculator
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Calculate your carbon footprint to promote sustainable living.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Carbon Footprint Calculator
+def calculate_carbon_footprint(km_driven, electricity_kwh):
+    car_emission = km_driven * 0.12  # kg CO2 per km
+    electricity_emission = electricity_kwh * 0.4  # kg CO2 per kWh
+    total = car_emission + electricity_emission
+    return total
+
+km = float(input("Enter kilometers driven today: "))
+kwh = float(input("Enter electricity usage (kWh) today: "))
+footprint = calculate_carbon_footprint(km, kwh)
+print(f"Your carbon footprint: {footprint} kg CO2")
+                </pre
+          >
+        </div>
+
+        <div class="text-center">
+          <a
+            href="index.html"
+            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+            >Back to Courses</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>© 2025 Tech Connects. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

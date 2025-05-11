@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AI & Machine Learning Basics</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <header class="bg-white shadow-md py-4">
+      <div class="container mx-auto px-6 text-center">
+        <a href="index.html" class="text-blue-900 font-bold text-2xl"
+          >🌍 Tech Connects</a
+        >
+      </div>
+    </header>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-blue-900 mb-6">
+          AI & Machine Learning Basics
+        </h1>
+        <p class="text-gray-700 mb-4">
+          Dive into AI and ML to solve sustainability challenges with
+          technology.
+        </p>
+
+        <!-- Course Material -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 1: Introduction to AI
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Understand what AI is and its role in sustainable development.
+          </p>
+          <p class="text-gray-600">
+            AI can predict energy usage to reduce waste in smart grids.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 2: Basics of Machine Learning
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Learn the fundamentals of ML algorithms.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Simple ML Example (Pseudo-code)
+data = [input_values]
+model = train_model(data)
+prediction = model.predict(new_data)
+print(f"Predicted energy usage: {prediction} kWh")
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 3: Applying ML for Sustainability
+          </h2>
+          <p class="text-gray-600 mb-4">Use ML to optimize resource usage.</p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Pseudo-code for Sustainability
+def optimize_energy(usage_data):
+    model = train_model(usage_data)
+    optimized_usage = model.optimize()
+    return optimized_usage
+
+usage = [100, 120, 90]  # Daily usage in kWh
+print(f"Optimized energy: {optimize_energy(usage)} kWh")
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Sustainability Project: Energy Prediction
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Predict energy needs to reduce overconsumption.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Simple Prediction Model (Pseudo-code)
+def predict_energy(previous_usage):
+    average = sum(previous_usage) / len(previous_usage)
+    return average * 1.1  # 10% buffer
+
+usage_history = [100, 110, 105]
+prediction = predict_energy(usage_history)
+print(f"Predicted energy for tomorrow: {prediction} kWh")
+                </pre
+          >
+        </div>
+
+        <div class="text-center">
+          <a
+            href="index.html"
+            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+            >Back to Courses</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>© 2025 Tech Connects. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>
