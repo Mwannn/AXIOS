@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Web Development with JavaScript</title>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="styles.css" />  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="text-2xl font-bold text-blue-900 flex items-center">
+          <span>🌍 Tech Connects</span>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
+          <li>
+            <a href="index.html" class="text-blue-600 hover:text-blue-800"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#courses" class="text-blue-600 hover:text-blue-800"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a href="#sustainability" class="text-blue-600 hover:text-blue-800"
+              >Sustainability</a
+            >
+          </li>
+          <li>
+            <a href="#testimonials" class="text-blue-600 hover:text-blue-800"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="text-blue-600 hover:text-blue-800"
+              >Contact</a
+            >
+          </li>
+          <div class="flex items-center space-x-4">
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="Search courses..."
+              class="border rounded-lg p-2 w-full md:w-auto"
+            />
+            <button
+              onclick="searchCourses()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Search
+            </button>
+            <i
+              id="dark-mode-toggle"
+              class="fas fa-sun dark-mode-toggle text-yellow-500"
+              onclick="toggleDarkMode()"
+            ></i>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-blue-900 mb-6">
+          Web Development with JavaScript
+        </h1>
+        <p class="text-gray-700 mb-4">
+          Learn to create efficient and sustainable web applications.
+        </p>
+
+        <!-- Course Material -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 1: JavaScript Basics
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Get started with variables and functions in JavaScript.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+let message = "Welcome to Tech Connects!";
+function displayMessage() {
+    console.log(message);
+}
+displayMessage();
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 2: DOM Manipulation
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Interact with web elements dynamically.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+document.addEventListener("DOMContentLoaded", function() {
+    let element = document.createElement("p");
+    element.textContent = "Sustainable web development!";
+    document.body.appendChild(element);
+});
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 3: Event Handling
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Respond to user actions for interactive sites.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+document.getElementById("myButton").addEventListener("click", function() {
+    alert("You clicked for sustainability!");
+});
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Sustainability Project: Energy-Saving Web Tool
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Create a tool to remind users to save energy.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+function remindEnergySave() {
+    let reminder = confirm("Turn off unused devices to save energy!");
+    if (reminder) {
+        alert("Great choice for a sustainable future!");
+    }
+}
+document.getElementById("energyButton").addEventListener("click", remindEnergySave);
+                </pre
+          >
+        </div>
+
+        <div class="text-center">
+          <a
+            href="index.html"
+            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+            >Back to Courses</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="bottom-0 z-50 flex flex-col items-center justify-center bg-gray-800 text-white p-4 sm:p-6 lg:p-8">
+      <p class="text-lg md:text-xl text-center mb-4">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, excepturi.
+      </p>
+      <div class="flex flex-col md:flex-row gap-2">
+        <a href="discussion.html" class="bg-teal-600 w-full min-w-[200px] hover:bg-teal-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg mb-2 md:mb-0 text-center">
+          Ask Question
+        </a>
+        <a href="comingSoon.html" class="bg-gray-600 w-full min-w-[200px] hover:bg-gray-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg text-center">
+          Continue
+        </a>
+      </div>
+    </div>
+
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>© 2025 Tech Connects. All rights reserved.</p>
+      </div>
+    </footer>
+  </body>
+</html>

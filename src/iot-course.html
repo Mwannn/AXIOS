@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Introduction to IoT for Sustainability</title>
+<!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="output.css" />
+    <link rel="stylesheet" href="styles.css" />    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <style>
+      .dark-mode {
+        background-color: #1f2937;
+        color: #e5e7eb;
+      }
+      .dark-mode .bg-white {
+        background-color: #374151;
+      }
+      .dark-mode .bg-gray-100 {
+        background-color: #1f2937;
+      }
+      .dark-mode .text-gray-600 {
+        color: #d1d5db;
+      }
+      .dark-mode .text-blue-900 {
+        color: #93c5fd;
+      }
+      .dark-mode .bg-blue-900 {
+        background-color: #111827;
+      }
+      .dark-mode-toggle {
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: transform 0.3s ease;
+      }
+      .dark-mode-toggle:hover {
+        transform: scale(1.2);
+      }
+    </style>
+  </head>
+  <body class="bg-gray-100 font-sans">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="text-2xl font-bold text-blue-900 flex items-center">
+          <span>🌍 Tech Connects</span>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
+          <li>
+            <a href="index.html" class="text-blue-600 hover:text-blue-800"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#courses" class="text-blue-600 hover:text-blue-800"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a href="#sustainability" class="text-blue-600 hover:text-blue-800"
+              >Sustainability</a
+            >
+          </li>
+          <li>
+            <a href="#testimonials" class="text-blue-600 hover:text-blue-800"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="text-blue-600 hover:text-blue-800"
+              >Contact</a
+            >
+          </li>
+          <div class="flex items-center space-x-4">
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="Search courses..."
+              class="border rounded-lg p-2 w-full md:w-auto"
+            />
+            <button
+              onclick="searchCourses()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Search
+            </button>
+            <i
+              id="dark-mode-toggle"
+              class="fas fa-sun dark-mode-toggle text-yellow-500"
+              onclick="toggleDarkMode()"
+            ></i>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <section class="py-16">
+      <div class="container mx-auto px-6">
+        <h1 class="text-4xl font-bold text-blue-900 mb-6">
+          Introduction to IoT for Sustainability
+        </h1>
+        <p class="text-gray-700 mb-4">
+          Learn IoT basics to create smart, sustainable solutions like efficient
+          farming.
+        </p>
+
+        <!-- Progress Tracker -->
+        <div class="mb-6">
+          <h2 class="text-xl font-semibold text-blue-800 mb-2">
+            Your Progress
+          </h2>
+          <div class="w-full bg-gray-200 rounded-full h-4">
+            <div
+              id="progress-bar"
+              class="bg-blue-600 h-4 rounded-full"
+              style="width: 0%"
+            ></div>
+          </div>
+          <p id="progress-text" class="text-gray-600 mt-2">0% Complete</p>
+        </div>
+
+        <!-- Course Material -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 1: What is IoT?
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Understand the basics of Internet of Things and its role in
+            sustainability.
+          </p>
+          <p class="text-gray-600">
+            IoT connects devices to collect and share data for efficient
+            resource use.
+          </p>
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 2: IoT Sensors
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Learn about sensors used in IoT for environmental monitoring.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Pseudo-code: Reading Sensor Data
+sensor_data = {
+    'temperature': 25,
+    'moisture': 60
+}
+print(f"Temperature: {sensor_data['temperature']}°C, Moisture: {sensor_data['moisture']}%")
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Lesson 3: IoT Communication
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Explore how IoT devices communicate data.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Pseudo-code: Sending Data
+def send_data(data):
+    if data['moisture'] < 50:
+        return "Water the farm!"
+    return "Conditions optimal"
+print(send_data({'moisture': 40}))
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Sustainability Project: Smart Farming Monitor
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Create a simple IoT system to monitor farming conditions.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Smart Farming Monitor
+def monitor_farm(temperature, moisture):
+    if temperature > 35 or moisture < 40:
+        return "Alert: Unfavorable conditions!"
+    return "Farm conditions are good."
+
+print(monitor_farm(36, 35))  # Output: Alert: Unfavorable conditions!
+print(monitor_farm(25, 60))  # Output: Farm conditions are good.
+                </pre
+          >
+        </div>
+
+        <!-- Quiz Section -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Quiz: Test Your Knowledge
+          </h2>
+          <p class="text-gray-600 mb-4">
+            What is the primary purpose of IoT sensors in farming?
+          </p>
+          <div class="mt-4">
+            <label class="block mb-2"
+              ><input type="radio" name="quiz" value="correct" /> Monitor
+              environmental conditions</label
+            >
+            <label class="block mb-2"
+              ><input type="radio" name="quiz" value="incorrect1" /> Control
+              water pumps only</label
+            >
+            <label class="block mb-2"
+              ><input type="radio" name="quiz" value="incorrect2" /> Store data
+              offline</label
+            >
+            <button
+              onclick="checkQuiz()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Submit
+            </button>
+            <p id="quiz-result" class="mt-2 text-gray-600"></p>
+          </div>
+        </div>
+
+        <!-- Downloadable Resource -->
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Downloadable Resource
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Download the course material as a text file for offline learning.
+          </p>
+          <a
+            href="#"
+            onclick="downloadMaterial('IoT Course Material', 'IoT basics: What is IoT, Sensors, Communication, and Smart Farming Monitor...')"
+            class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+            >Download Material</a
+          >
+        </div>
+
+        <div class="text-center">
+          <a
+            href="index.html"
+            class="bg-blue-600 text-white px-6 py-3 rounded hover:bg-blue-700 transition"
+            >Back to Courses</a
+          >
+        </div>
+      </div>
+    </section>
+
+    <div
+      class="bottom-0 z-50 flex flex-col items-center justify-center bg-gray-800 text-white p-4 sm:p-6 lg:p-8">
+      <p class="text-lg md:text-xl text-center mb-4">
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, excepturi.
+      </p>
+      <div class="flex flex-col md:flex-row gap-2">
+        <a href="discussion.html" class="bg-teal-600 w-full min-w-[200px] hover:bg-teal-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg mb-2 md:mb-0 text-center">
+          Ask Question
+        </a>
+        <a href="comingSoon.html" class="bg-gray-600 w-full min-w-[200px] hover:bg-gray-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg text-center">
+          Continue
+        </a>
+      </div>
+    </div>
+
+    <footer class="bg-blue-900 text-white py-8">
+      <div class="container mx-auto px-6 text-center">
+        <p>© 2025 Tech Connects. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      function toggleDarkMode() {
+        const toggle = document.getElementById("dark-mode-toggle");
+        document.body.classList.toggle("dark-mode");
+        if (document.body.classList.contains("dark-mode")) {
+          toggle.classList.remove("fa-sun");
+          toggle.classList.add("fa-moon");
+          toggle.style.color = "#f1c40f";
+        } else {
+          toggle.classList.remove("fa-moon");
+          toggle.classList.add("fa-sun");
+          toggle.style.color = "#f59e0b";
+        }
+        localStorage.setItem(
+          "darkMode",
+          document.body.classList.contains("dark-mode")
+        );
+      }
+      if (localStorage.getItem("darkMode") === "true") {
+        document.body.classList.add("dark-mode");
+        const toggle = document.getElementById("dark-mode-toggle");
+        toggle.classList.remove("fa-sun");
+        toggle.classList.add("fa-moon");
+        toggle.style.color = "#f1c40f";
+      }
+      window.addEventListener("scroll", () => {
+        const totalHeight = document.body.scrollHeight - window.innerHeight;
+        const progress = (window.scrollY / totalHeight) * 100;
+        document.getElementById("progress-bar").style.width = progress + "%";
+        document.getElementById("progress-text").textContent =
+          Math.round(progress) + "% Complete";
+        localStorage.setItem("iotProgress", progress);
+      });
+      if (localStorage.getItem("iotProgress")) {
+        const savedProgress = localStorage.getItem("iotProgress");
+        document.getElementById("progress-bar").style.width =
+          savedProgress + "%";
+        document.getElementById("progress-text").textContent =
+          Math.round(savedProgress) + "% Complete";
+      }
+      function checkQuiz() {
+        const answer = document.querySelector('input[name="quiz"]:checked');
+        const result = document.getElementById("quiz-result");
+        if (answer && answer.value === "correct") {
+          result.textContent =
+            "Correct! IoT sensors monitor environmental conditions.";
+          result.style.color = "green";
+        } else {
+          result.textContent =
+            "Incorrect. IoT sensors monitor environmental conditions.";
+          result.style.color = "red";
+        }
+      }
+      function downloadMaterial(filename, content) {
+        const blob = new Blob([content], { type: "text/plain" });
+        const url = URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = url;
+        a.download = filename + ".txt";
+        a.click();
+        URL.revokeObjectURL(url);
+      }
+    </script>
+  </body>
+</html>

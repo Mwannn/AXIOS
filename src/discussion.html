@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="output.css" />
+  </head>
+  <body class="bg-gray-100">
+    <!-- Header -->
+    <header class="bg-white shadow-md sticky top-0 z-50">
+      <nav
+        class="container mx-auto flex justify-between items-center py-4 px-6"
+      >
+        <div class="text-2xl font-bold text-blue-900 flex items-center">
+          <span>🌍 Tech Connects</span>
+        </div>
+        <div class="flex items-center space-x-4 md:hidden">
+          <button id="menu-toggle" class="text-blue-600 focus:outline-none">
+            <i class="fas fa-bars text-2xl"></i>
+          </button>
+        </div>
+        <ul id="nav-menu" class="hidden md:flex space-x-6 items-center">
+          <li>
+            <a href="index.html" class="text-blue-600 hover:text-blue-800"
+              >Home</a
+            >
+          </li>
+          <li>
+            <a href="#courses" class="text-blue-600 hover:text-blue-800"
+              >Courses</a
+            >
+          </li>
+          <li>
+            <a href="#sustainability" class="text-blue-600 hover:text-blue-800"
+              >Sustainability</a
+            >
+          </li>
+          <li>
+            <a href="#testimonials" class="text-blue-600 hover:text-blue-800"
+              >Testimonials</a
+            >
+          </li>
+          <li>
+            <a href="#contact" class="text-blue-600 hover:text-blue-800"
+              >Contact</a
+            >
+          </li>
+          <div class="flex items-center space-x-4">
+            <input
+              type="text"
+              id="search-bar"
+              placeholder="Search courses..."
+              class="border rounded-lg p-2 w-full md:w-auto"
+            />
+            <button
+              onclick="searchCourses()"
+              class="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+            >
+              Search
+            </button>
+            <i
+              id="dark-mode-toggle"
+              class="fas fa-sun dark-mode-toggle text-yellow-500"
+              onclick="toggleDarkMode()"
+            ></i>
+          </div>
+        </ul>
+      </nav>
+    </header>
+
+    <!-- Ask Question Button -->
+    <div class="max-w-5xl mx-auto my-6 text-right">
+      <button
+        onclick="openDiscussionModal()"
+        class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+      >
+        Ask Question +
+      </button>
+    </div>
+
+    <!-- Discussions Container -->
+    <div id="discussionContainer" class="max-w-5xl mx-auto space-y-10">
+      <!-- Dummy Discussion -->
+      <div class="bg-white shadow rounded-lg p-6">
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">
+          🐞 Bug: Cannot login when using Safari
+        </h2>
+        <p class="text-gray-600 mb-4">
+          When I try to log in using Safari on macOS, nothing happens after
+          clicking the login button.
+        </p>
+        <div class="ml-4 pl-4 space-y-4" id="thread-0">
+          <!-- Replies go here -->
+        </div>
+        <div class="mt-4">
+          <textarea
+            placeholder="Write a reply..."
+            class="w-full p-3 border border-gray-300 rounded-md"
+            id="reply-input-0"
+          ></textarea>
+          <button
+            onclick="addReply(0)"
+            class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700"
+          >
+            Reply
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Modal -->
+    <div
+      id="modal"
+      class="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center hidden z-50"
+    >
+      <div class="bg-white p-6 rounded-lg w-full max-w-xl">
+        <h3 class="text-xl font-semibold mb-4">New Discussion</h3>
+        <input
+          type="text"
+          id="newTitle"
+          placeholder="Enter title..."
+          class="w-full p-3 border border-gray-300 rounded-md mb-3"
+        />
+        <textarea
+          id="newBody"
+          rows="4"
+          placeholder="Enter description..."
+          class="w-full p-3 border border-gray-300 rounded-md"
+        ></textarea>
+        <div class="mt-4 text-right space-x-2">
+          <button
+            onclick="closeDiscussionModal()"
+            class="px-4 py-2 bg-gray-300 rounded hover:bg-gray-400"
+          >
+            Cancel
+          </button>
+          <button
+            onclick="addDiscussion()"
+            class="px-4 py-2 bg-green-600 text-white rounded hover:bg-green-700"
+          >
+            Add
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      let discussionId = 1; // starts at 1 because 0 is dummy
+
+      function openDiscussionModal() {
+        document.getElementById("modal").classList.remove("hidden");
+      }
+
+      function closeDiscussionModal() {
+        document.getElementById("modal").classList.add("hidden");
+        document.getElementById("newTitle").value = "";
+        document.getElementById("newBody").value = "";
+      }
+
+      function addDiscussion() {
+        const title = document.getElementById("newTitle").value.trim();
+        const body = document.getElementById("newBody").value.trim();
+        if (!title || !body) return;
+
+        const container = document.getElementById("discussionContainer");
+        const div = document.createElement("div");
+        div.className = "bg-white shadow rounded-lg p-6";
+        div.innerHTML = `
+        <h2 class="text-2xl font-bold text-gray-800 mb-2">${title}</h2>
+        <p class="text-gray-600 mb-4">${body}</p>
+        <div class="ml-4 pl-4 space-y-4" id="thread-${discussionId}"></div>
+        <div class="mt-4">
+          <textarea placeholder="Write a reply..." class="w-full p-3 border border-gray-300 rounded-md" id="reply-input-${discussionId}"></textarea>
+          <button onclick="addReply(${discussionId})" class="mt-2 bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700">Reply</button>
+        </div>
+      `;
+        container.appendChild(div);
+        discussionId++;
+        closeDiscussionModal();
+      }
+
+      function addReply(threadId, parentEl = null) {
+        const inputId = parentEl
+          ? `child-reply-input-${Math.random()}`
+          : `reply-input-${threadId}`;
+        const input = parentEl
+          ? parentEl.querySelector("textarea")
+          : document.getElementById(inputId);
+        const text = input.value.trim();
+        if (!text) return;
+
+        const replyBox = document.createElement("div");
+        replyBox.className = "ml-4 border-l-2 border-gray-300 pl-4 space-y-2";
+        replyBox.innerHTML = `
+        <p class="text-gray-800">${text}</p>
+        <textarea placeholder="Reply to this..." class="w-full p-2 border border-gray-300 rounded-md"></textarea>
+        <button onclick="addReply(${threadId}, this.parentElement)" class="mt-1 text-sm text-blue-600 hover:underline">Reply</button>
+      `;
+
+        const target = parentEl
+          ? parentEl
+          : document.getElementById(`thread-${threadId}`);
+        target.appendChild(replyBox);
+        input.value = "";
+      }
+    </script>
+  </body>
+</html>
