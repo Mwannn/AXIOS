@@ -3,10 +3,11 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Ethical AI Development</title>
-<!-- <script src="https://cdn.tailwindcss.com"></script> -->
-    <link rel="stylesheet" href="output.css" />
-    <link rel="stylesheet" href="styles.css" />    <link
+    <title>Data Analysis with Pandas</title>
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <link rel="stylesheet" href="../src/output.css" />
+    <link rel="stylesheet" href="../src/styles.css" />
+    <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
     />
@@ -106,11 +107,11 @@
     <section class="py-16">
       <div class="container mx-auto px-6">
         <h1 class="text-4xl font-bold text-blue-900 mb-6">
-          Ethical AI Development
+          Data Analysis with Pandas
         </h1>
         <p class="text-gray-700 mb-4">
-          Develop AI responsibly to ensure positive impacts on society and the
-          environment.
+          Learn to analyze data with Pandas to support sustainable
+          decision-making.
         </p>
 
         <!-- Progress Tracker -->
@@ -131,70 +132,74 @@
         <!-- Course Material -->
         <div class="bg-white p-6 rounded-lg shadow-md mb-6">
           <h2 class="text-2xl font-semibold text-blue-800 mb-4">
-            Lesson 1: Principles of Ethical AI
+            Lesson 1: Introduction to Pandas
           </h2>
           <p class="text-gray-600 mb-4">
-            Understand the core principles of ethical AI development.
-          </p>
-          <p class="text-gray-600">
-            Key principles include fairness, transparency, and accountability.
-          </p>
-        </div>
-
-        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
-          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
-            Lesson 2: Identifying Bias in AI
-          </h2>
-          <p class="text-gray-600 mb-4">
-            Learn to detect and mitigate bias in AI systems.
+            Learn the basics of Pandas for data manipulation.
           </p>
           <pre class="bg-gray-100 p-4 text-sm">
-# Pseudo-code: Checking Bias
-data = {'gender': ['M', 'F', 'M', 'F'], 'score': [90, 85, 95, 80]}
-if max(data['score']) - min(data['score']) > 10:
-    print("Potential bias detected!")
-else:
-    print("No significant bias.")
+# Example: Creating a DataFrame
+import pandas as pd
+data = pd.DataFrame({'City': ['Jakarta', 'Bandung'], 'Energy (kWh)': [500, 300]})
+print(data)
                 </pre
           >
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-md mb-6">
           <h2 class="text-2xl font-semibold text-blue-800 mb-4">
-            Lesson 3: Environmental Impact of AI
+            Lesson 2: Data Cleaning
           </h2>
           <p class="text-gray-600 mb-4">
-            Explore how to minimize AI's carbon footprint.
+            Clean and preprocess data for analysis.
           </p>
           <pre class="bg-gray-100 p-4 text-sm">
-# Pseudo-code: Optimizing AI Training
-def optimize_training(data_size):
-    if data_size > 1000:
-        return "Reduce data size for lower energy use"
-    return "Training optimized"
-print(optimize_training(1500))
+# Example: Handling Missing Data
+import pandas as pd
+data = pd.DataFrame({'Energy (kWh)': [500, None, 300]})
+data['Energy (kWh)'].fillna(data['Energy (kWh)'].mean(), inplace=True)
+print(data)
                 </pre
           >
         </div>
 
         <div class="bg-white p-6 rounded-lg shadow-md mb-6">
           <h2 class="text-2xl font-semibold text-blue-800 mb-4">
-            Sustainability Project: Ethical AI Checklist
+            Lesson 3: Data Visualization
           </h2>
           <p class="text-gray-600 mb-4">
-            Create a checklist to ensure AI development is ethical.
+            Visualize data trends for better insights.
           </p>
           <pre class="bg-gray-100 p-4 text-sm">
-# Ethical AI Checklist
-checklist = {
-    'fairness': True,
-    'transparency': True,
-    'low_carbon': False
-}
-if all(checklist.values()):
-    print("AI is ethically compliant!")
-else:
-    print("Review the following: ", [k for k, v in checklist.items() if not v])
+# Example: Plotting Data
+import pandas as pd
+import matplotlib.pyplot as plt
+data = pd.DataFrame({'Month': ['Jan', 'Feb', 'Mar'], 'Energy (kWh)': [500, 450, 300]})
+data.plot(x='Month', y='Energy (kWh)', kind='bar')
+plt.title('Energy Consumption')
+plt.savefig('energy_plot.png')
+                </pre
+          >
+        </div>
+
+        <div class="bg-white p-6 rounded-lg shadow-md mb-6">
+          <h2 class="text-2xl font-semibold text-blue-800 mb-4">
+            Sustainability Project: Energy Consumption Analysis
+          </h2>
+          <p class="text-gray-600 mb-4">
+            Analyze energy data to identify opportunities for reduction.
+          </p>
+          <pre class="bg-gray-100 p-4 text-sm">
+# Energy Consumption Analysis
+import pandas as pd
+data = pd.DataFrame({
+    'Day': ['Mon', 'Tue', 'Wed', 'Thu', 'Fri'],
+    'Energy (kWh)': [500, 600, 550, 300, 400]
+})
+average = data['Energy (kWh)'].mean()
+high_usage_days = data[data['Energy (kWh)'] > average]['Day'].tolist()
+print(f"Average energy usage: {average} kWh")
+print(f"Days with high usage: {high_usage_days}")
                 </pre
           >
         </div>
@@ -204,21 +209,19 @@ else:
           <h2 class="text-2xl font-semibold text-blue-800 mb-4">
             Quiz: Test Your Knowledge
           </h2>
-          <p class="text-gray-600 mb-4">
-            Which is a key principle of ethical AI?
-          </p>
+          <p class="text-gray-600 mb-4">What does `fillna()` do in Pandas?</p>
           <div class="mt-4">
             <label class="block mb-2"
-              ><input type="radio" name="quiz" value="correct" />
-              Transparency</label
+              ><input type="radio" name="quiz" value="correct" /> Replaces
+              missing values</label
             >
             <label class="block mb-2"
-              ><input type="radio" name="quiz" value="incorrect1" />
-              Speed</label
+              ><input type="radio" name="quiz" value="incorrect1" /> Deletes
+              missing values</label
             >
             <label class="block mb-2"
-              ><input type="radio" name="quiz" value="incorrect2" />
-              Complexity</label
+              ><input type="radio" name="quiz" value="incorrect2" /> Adds new
+              rows</label
             >
             <button
               onclick="checkQuiz()"
@@ -240,7 +243,7 @@ else:
           </p>
           <a
             href="#"
-            onclick="downloadMaterial('Ethical AI Course Material', 'Ethical AI basics: Principles, Bias, Environmental Impact, and Checklist...')"
+            onclick="downloadMaterial('Pandas Course Material', 'Pandas basics: DataFrame, Data Cleaning, Visualization, and Energy Consumption Analysis...')"
             class="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
             >Download Material</a
           >
@@ -257,15 +260,23 @@ else:
     </section>
 
     <div
-      class="bottom-0 z-50 flex flex-col items-center justify-center bg-gray-800 text-white p-4 sm:p-6 lg:p-8">
+      class="bottom-0 z-50 flex flex-col items-center justify-center bg-gray-800 text-white p-4 sm:p-6 lg:p-8"
+    >
       <p class="text-lg md:text-xl text-center mb-4">
-        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel, excepturi.
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Vel,
+        excepturi.
       </p>
       <div class="flex flex-col md:flex-row gap-2">
-        <a href="discussion.html" class="bg-teal-600 w-full min-w-[200px] hover:bg-teal-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg mb-2 md:mb-0 text-center">
+        <a
+          href="discussion.html"
+          class="bg-teal-600 w-full min-w-[200px] hover:bg-teal-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg mb-2 md:mb-0 text-center"
+        >
           Ask Question
         </a>
-        <a href="comingSoon.html" class="bg-gray-600 w-full min-w-[200px] hover:bg-gray-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg text-center">
+        <a
+          href="comingSoon.html"
+          class="bg-gray-600 w-full min-w-[200px] hover:bg-gray-700 px-4 py-2 text-sm md:text-base font-semibold rounded-lg text-center"
+        >
           Continue
         </a>
       </div>
@@ -308,10 +319,10 @@ else:
         document.getElementById("progress-bar").style.width = progress + "%";
         document.getElementById("progress-text").textContent =
           Math.round(progress) + "% Complete";
-        localStorage.setItem("ethicalAiProgress", progress);
+        localStorage.setItem("pandasProgress", progress);
       });
-      if (localStorage.getItem("ethicalAiProgress")) {
-        const savedProgress = localStorage.getItem("ethicalAiProgress");
+      if (localStorage.getItem("pandasProgress")) {
+        const savedProgress = localStorage.getItem("pandasProgress");
         document.getElementById("progress-bar").style.width =
           savedProgress + "%";
         document.getElementById("progress-text").textContent =
@@ -321,12 +332,10 @@ else:
         const answer = document.querySelector('input[name="quiz"]:checked');
         const result = document.getElementById("quiz-result");
         if (answer && answer.value === "correct") {
-          result.textContent =
-            "Correct! Transparency is a key principle of ethical AI.";
+          result.textContent = "Correct! `fillna()` replaces missing values.";
           result.style.color = "green";
         } else {
-          result.textContent =
-            "Incorrect. Transparency is a key principle of ethical AI.";
+          result.textContent = "Incorrect. `fillna()` replaces missing values.";
           result.style.color = "red";
         }
       }
