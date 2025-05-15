@@ -1,16 +1,33 @@
 @import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+/* @variant dark (&:where([data-theme="dark"], [data-theme="dark"] *)); */
 
-htmll {
+@theme {
+  --color-lightPrime: #3b82f6;
+  --color-lightSecondary: #a855f7;
+  --color-lightPrimeHover: #2563eb;
+  --color-lightSecondaryHover: #9333ea;
+
+  /* --color-light3: #DD88CF;
+  --color-light4: #4B164C;
+
+  --color-dark1: #2E073F;
+  --color-dark2: #7A1CAC;
+  --color-dark3: #AD49E1;
+  --color-dark4: #EBD3F8; */
+}
+
+html {
   @apply scroll-smooth;
 }
 
-.course-card {
+/* .course-card {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 .course-card:hover {
   transform: translateY(-5px);
-  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
-}
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
+/* } */
 .hero-section {
   background: linear-gradient(to right, #1e3a8a, #10b981);
 }
