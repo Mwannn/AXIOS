@@ -28,9 +28,9 @@ html {
   transform: translateY(-5px);
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2); */
 /* } */
-.hero-section {
+/* .hero-section {
   background: linear-gradient(to right, #1e3a8a, #10b981);
-}
+} */
 .modal {
   display: none;
   position: fixed;

@@ -75,7 +75,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section id="home" class="hero-section text-white py-20">
+    <section id="home" class="bg-gradient-to-r from-lightPrime to-lightSecondary text-white py-20">
       <div class="container mx-auto text-center px-4">
         <h1 class="text-4xl sm:text-5xl font-bold mb-4 fade-in">
           Bridging Digital Solutions for a Sustainable Tomorrow
@@ -83,11 +83,26 @@
         <p class="text-lg sm:text-xl mb-8 fade-in">
           Free coding and AI resources to empower a sustainable future.
         </p>
-        <a
-          href="#courses"
-          class="bg-white dark:bg-gray-700 text-blue-900 dark:text-blue-300 px-6 py-3 rounded-full font-semibold hover:bg-blue-100 transition text-sm sm:text-base"
-          >Explore Free Courses</a
-        >
+
+        <!-- Glowing button -->
+      <div class="relative inline-flex group">
+          <!-- Glow Effect -->
+          <div
+              class="absolute transition-all duration-1000 opacity-70 -inset-px bg-lightSecondaryHover rounded-xl blur-lg 
+                    group-hover:opacity-100 group-hover:-inset-1 group-hover:duration-200 animate-tilt">
+          </div>
+
+          <!-- Button -->
+          <a href="#courses" title="Get quote now"
+              class="relative inline-flex items-center justify-center px-8 py-4 text-lg font-bold text-lightPrimeHover 
+                    transition-all duration-200 bg-white ring-2 ring-lightPrime font-pj rounded-xl focus:outline-none 
+                    focus:ring-2 focus:ring-offset-2 focus:ring-lightSecondaryHover 
+                    hover:text-lightSecondary hover:ring-lightSecondaryHover"
+              role="button">
+              Explore Free Courses
+          </a>
+      </div>
+
       </div>
     </section>
 
@@ -95,25 +110,27 @@
     <section id="courses" class="py-16 bg-white dark:bg-gray-700">
       <div class="container mx-auto px-4">
         <h2
-          class="text-2xl sm:text-3xl font-bold text-center text-blue-900 dark:text-blue-300 mb-12"
+          class="text-2xl sm:text-3xl font-bold text-center text-lightSecondary dark:text-blue-300 mb-12"
         >
           Free Learning Resources
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
           <!-- Course 1 -->
           <div class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl ">
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-200 mb-2">
               Fundamental Python Programming
             </h3>
-            <p class="text-gray-600 dark:text-gray-200 text-sm sm:text-base mb-4">
+            <p class="text-lightSecondaryHover dark:text-gray-200 text-sm sm:text-base mb-4">
               Learn Python basics for AI, data science, and sustainable tech
               solutions.
             </p>
             <button
               onclick="openModal('python-modal')"
-              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
             >
+            <span>
               Preview Material
+            </span>
             </button>
            <a
               href="python-course.html" class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110">
@@ -124,17 +141,19 @@
           </div>
           <!-- Course 2 -->
           <div class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl ">
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-200 mb-2">
               AI & Machine Learning Basics
             </h3>
-            <p class="text-gray-600 dark:text-gray-200 text-sm sm:text-base mb-4">
+            <p class="text-lightSecondaryHover dark:text-gray-200 text-sm sm:text-base mb-4">
               Explore AI concepts to solve real-world sustainability challenges.
             </p>
             <button
-              onclick="openModal('ai-modal')"
-              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base"
+             onclick="openModal('ai-modal')"
+              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
             >
+            <span>
               Preview Material
+            </span>
             </button>
             <a
               href="python-course.html" class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110">
@@ -145,17 +164,19 @@
           </div>
           <!-- Course 3 -->
           <div class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl ">
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-200 mb-2">
               Web Development with JavaScript
             </h3>
-            <p class="text-gray-600 dark:text-gray-200 text-sm sm:text-base mb-4">
+            <p class="text-lightSecondaryHover dark:text-gray-200 text-sm sm:text-base mb-4">
               Build an interactive web applications with a focus on efficiency.
             </p>
             <button
               onclick="openModal('js-modal')"
-              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base"
+               class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
             >
+            <span>
               Preview Material
+            </span>
             </button>
             <a
               href="python-course.html" class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110">
@@ -166,18 +187,20 @@
           </div>
           <!-- Course 4: Data Analysis with Pandas -->
           <div class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl ">
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-200 mb-2">
               Data Analysis with Pandas
             </h3>
-            <p class="text-gray-600 dark:text-gray-200 text-sm sm:text-base mb-4">
+            <p class="text-lightSecondaryHover dark:text-gray-200 text-sm sm:text-base mb-4">
               Analyze data to support sustainable decision-making, like energy
               consumption trends.
             </p>
             <button
               onclick="openModal('pandas-modal')"
-              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base"
+               class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
             >
+            <span>
               Preview Material
+            </span>
             </button>
             <a
               href="python-course.html" class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110">
@@ -188,18 +211,20 @@
           </div>
           <!-- Course 5: Introduction to IoT for Sustainability -->
           <div class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl ">
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-200 mb-2">
               Introduction to IoT for Sustainability
             </h3>
-            <p class="text-gray-600 dark:text-gray-200 text-sm sm:text-base mb-4">
+            <p class="text-lightSecondaryHover dark:text-gray-200 text-sm sm:text-base mb-4">
               Learn IoT basics to create smart, sustainable solutions like
               efficient farming.
             </p>
             <button
               onclick="openModal('iot-modal')"
-              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base"
+               class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
             >
+            <span>
               Preview Material
+            </span>
             </button>
             <a
               href="python-course.html" class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110">
@@ -210,18 +235,20 @@
           </div>
           <!-- Course 6: Ethical AI Development -->
           <div class="dark:bg-gray-600 bg-gray-50 rounded-lg p-4 sm:p-6 text-center ring-2 ring-lightPrime hover:ring-1 hover:ring-lightSecondary transition-all duration-300 hover:-translate-y-[4px] hover:shadow-2xl ">
-            <h3 class="text-lg sm:text-xl font-semibold text-blue-800 dark:text-blue-200 mb-2">
+            <h3 class="text-lg sm:text-xl font-semibold text-lightSecondary dark:text-blue-200 mb-2">
               Ethical AI Development
             </h3>
-            <p class="text-gray-600 dark:text-gray-200 text-sm sm:text-base mb-4">
+            <p class="text-lightSecondaryHover dark:text-gray-200 text-sm sm:text-base mb-4">
               Develop AI responsibly to ensure positive impacts on society and
               the environment.
             </p>
             <button
               onclick="openModal('ethical-ai-modal')"
-              class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base"
+               class="mt-2 bg-lightPrime text-white px-3 py-2 rounded hover:bg-lightPrimeHover transition block text-sm sm:text-base group overflow-hidden hover:brightness-110"
             >
+            <span>
               Preview Material
+            </span>
             </button>
             <a
               href="python-course.html" class="group mt-2 bg-gradient-to-r from-lightPrime to-lightSecondary text-white px-3 py-2 rounded block text-sm sm:text-base transition-all duration-500 overflow-hidden hover:brightness-110">
@@ -434,14 +461,6 @@ print(data)</code></pre>
     </footer>
 
     <script>
-
-      // // Modal enabler
-      // function openModal(modalId) {
-      //   document.getElementById(modalId).classList.remove("hidden");
-      // }
-      // function closeModal(modalId) {
-      //   document.getElementById(modalId).classList.add("hidden");
-      // }
       document.addEventListener("keydown", (e) => {
         if (e.key === "Escape") {
           document
